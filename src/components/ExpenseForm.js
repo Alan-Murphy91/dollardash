@@ -6,7 +6,6 @@ import 'react-dates/initialize';
 
 // const date = new Date();
 const now = moment();
-console.log(now.format('MMM Do, YYYY'));
 
 export default class ExpenseForm extends React.Component {
   state = {
@@ -32,15 +31,29 @@ export default class ExpenseForm extends React.Component {
     }
   };
   onDateChange = (createdAt) => {
-    this.setState(() => ({ createdAt }));
+	if(createdAt) {
+		this.setState(() => ({ createdAt }));
+	}
   };
   onFocusChange = ({ focused }) => {
     this.setState(() => ({ calendarFocused: focused }));
   };
+
+  onSubmit = (e) => {
+	  e.preventDefault();
+	  if(!this.state.description || !this.state.amount) {
+		this.setState(() => ({error: 'Please provide description and amount.' }));
+	  } else {
+		this.setState(() => ({error: '' }));
+		console.log('submitted');
+	  }
+  };
+
   render() {
     return (
       <div>
-        <form>
+		{this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onSubmit}>
           <input
             type="text" 
             placeholder="Description"
