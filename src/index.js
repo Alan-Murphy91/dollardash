@@ -21,7 +21,7 @@ const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 // setInterval(() => {
 // 	console.log(state.filters); 
 // },3000) 
-
+console.log(state);
 ReactDOM.render(
 	<Provider store={store}>
 		<AppRouter />
