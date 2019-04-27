@@ -18,13 +18,16 @@ store.dispatch(addExpense({ description: 'Rent', amount: 109500 }));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-// setInterval(() => {
-// 	console.log(state.filters); 
-// },3000) 
-console.log(state);
-ReactDOM.render(
+
+console.log(state); 
+
+const jsx = (
 	<Provider store={store}>
 		<AppRouter />
-	</Provider>, 
+	</Provider>
+);
+
+ReactDOM.render(
+	jsx, 
 	document.getElementById('app')
 );
