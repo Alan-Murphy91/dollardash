@@ -4,7 +4,7 @@ import { setTextFilter } from '../redux/actions/filters';
 import { sortByAmount, sortByDate } from '../redux/actions/filters';
 
 const ExpenseListFilters = ({ filters, dispatch }) => (
-	<div>
+	<React.Fragment>
 		<input type='text' value={filters.text} onChange={(e) => {
 			dispatch(setTextFilter(e.target.value));
 		}}/>
@@ -14,7 +14,7 @@ const ExpenseListFilters = ({ filters, dispatch }) => (
 			<option value='date'>Date</option>
 			<option value='amount'>Amount</option>
 		</select>
-	</div>
+	</React.Fragment>
 );
 
 const mapStateToProps = (state) => {

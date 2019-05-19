@@ -4,14 +4,14 @@ import ExpenseListItem from './ExpenseListItem';
 import selectExpenses from '../redux/selectors/expenses';
 
 const ExpenseList = (props) => (
-	<div>
+	<React.Fragment>
 		<h1>Expense List</h1>
 		{props.expenses.map((expense) => {
 			return (
 				<ExpenseListItem key={expense.id} {...expense}/>
 			)
 		})}
-	</div>
+	</React.Fragment>
 );
 
 const mapStateToProps = (state) => {
