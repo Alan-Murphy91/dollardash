@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "jest": "^24.8.0",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "react-dates": "^20.0.0",
