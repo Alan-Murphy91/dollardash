@@ -3,10 +3,10 @@ import ExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
 
 const ExpenseDashboardPage = () => (
-  <React.Fragment>
-	<ExpenseListFilters />
+  <div>
+    <ExpenseListFilters />
     <ExpenseList />
-  </React.Fragment>
+  </div>
 );
 
 export default ExpenseDashboardPage;
